@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://eg6s80al002q"]
+
+[ext_resource type="PackedScene" uid="uid://blbd0xb7sdn4k" path="res://assets/ship_parts/cockpit/cockpit.blend" id="1_dx52e"]
+
+[node name="cockpit" type="Node3D"]
+
+[node name="cockpitBlend" parent="." instance=ExtResource("1_dx52e")]

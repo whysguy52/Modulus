@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmbbwmfjdqgom"]
+
+[ext_resource type="PackedScene" uid="uid://b5ehkc5hsg2hb" path="res://assets/ship_parts/storage_module/storage_module.blend" id="1_lvb3c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjcem"]
+size = Vector3(2, 2, 2)
+
+[node name="storage_module" type="StaticBody3D"]
+
+[node name="storage_module" parent="." instance=ExtResource("1_lvb3c")]
+
+[node name="mount_point_1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="mount_point_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="mount_point_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="mount_point_4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="mount_point_5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="mount_point_6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("BoxShape3D_hjcem")
