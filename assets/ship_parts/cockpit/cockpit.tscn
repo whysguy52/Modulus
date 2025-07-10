@@ -1,7 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://eg6s80al002q"]
+[gd_scene load_steps=5 format=3 uid="uid://eg6s80al002q"]
 
 [ext_resource type="PackedScene" uid="uid://blbd0xb7sdn4k" path="res://assets/ship_parts/cockpit/cockpit.blend" id="1_dx52e"]
 
-[node name="cockpit" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dx52e"]
+size = Vector3(0.001, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m26nw"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dx52e"]
+
+[node name="cockpit" type="CharacterBody3D"]
 
 [node name="cockpitBlend" parent="." instance=ExtResource("1_dx52e")]
+
+[node name="mount_point_1" type="Area3D" parent="."]
+transform = Transform3D(0, 2.98023e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 2.98023e-08, -2.98023e-08, -1, -0.000499964)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mount_point_1"]
+shape = SubResource("BoxShape3D_dx52e")
+
+[node name="mount_point_2" type="Area3D" parent="."]
+transform = Transform3D(5.2108e-15, -2.98023e-08, -1, 1, 1.31134e-07, 0, 1.31134e-07, -1, 2.98023e-08, -2.98023e-08, 1, -0.000499876)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mount_point_2"]
+shape = SubResource("BoxShape3D_dx52e")
+
+[node name="mount_point_3" type="Area3D" parent="."]
+transform = Transform3D(-1, -2.98023e-08, 4.37114e-08, -4.37114e-08, 1.31134e-07, -1, 2.98023e-08, -1, -1.31134e-07, -1, 0, -0.000499978)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mount_point_3"]
+shape = SubResource("BoxShape3D_dx52e")
+
+[node name="mount_point_4" type="Area3D" parent="."]
+transform = Transform3D(1, -2.98023e-08, 4.37114e-08, -4.37114e-08, 1.31134e-07, 1, -2.98023e-08, -1, 1.31134e-07, 1, 8.74228e-08, -0.000500037)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mount_point_4"]
+shape = SubResource("BoxShape3D_dx52e")
+
+[node name="mount_point_5" type="Area3D" parent="."]
+transform = Transform3D(-1.39091e-08, 1, 4.37114e-08, -1.31134e-07, -4.37114e-08, 1, 1, 1.39091e-08, 1.31134e-07, 0, 1.42109e-14, 0.9995)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mount_point_5"]
+shape = SubResource("BoxShape3D_dx52e")
+
+[node name="invalid_mount_point" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="invalid_mount_point"]
+shape = SubResource("BoxShape3D_m26nw")
+
+[node name="CoreCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dx52e")

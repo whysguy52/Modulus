@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvggxb3cfsdl4"]
+[gd_scene load_steps=9 format=3 uid="uid://cvggxb3cfsdl4"]
 
-[ext_resource type="PackedScene" uid="uid://d0dakto43nwhj" path="res://edit_player.tscn" id="1_tibjl"]
+[ext_resource type="PackedScene" uid="uid://d0dakto43nwhj" path="res://scenes/edit_player/edit_player.tscn" id="1_tibjl"]
 [ext_resource type="PackedScene" uid="uid://eg6s80al002q" path="res://assets/ship_parts/cockpit/cockpit.tscn" id="2_t708n"]
+[ext_resource type="PackedScene" uid="uid://b0ff6rt3bh6re" path="res://assets/ship_parts/engine_module/engine_module.tscn" id="3_s4vwq"]
+[ext_resource type="PackedScene" uid="uid://d0jbg00se0eaw" path="res://assets/ship_parts/storage_module/storage_module.tscn" id="4_ophjo"]
+[ext_resource type="PackedScene" uid="uid://c0l1kan4288gt" path="res://assets/ship_parts/turret_module/turret_module.tscn" id="5_m44be"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t708n"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,3 +32,12 @@ environment = SubResource("Environment_pvpre")
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 6, 0, -19)
 
 [node name="cockpit" parent="." instance=ExtResource("2_t708n")]
+
+[node name="storage_module" parent="." instance=ExtResource("4_ophjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="engine_module" parent="." instance=ExtResource("3_s4vwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="turret_module" parent="." instance=ExtResource("5_m44be")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
